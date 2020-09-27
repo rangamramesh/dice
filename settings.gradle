@@ -1,0 +1,3 @@
+rootProject.name = "Dice"
+include ':config'
+include ':app'
