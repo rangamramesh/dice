@@ -1,2 +1,2 @@
 # dice
-Dice Game with Viewmodel and Data binding
+Dice Game with MVVM and Data binding
