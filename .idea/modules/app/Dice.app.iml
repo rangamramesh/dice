@@ -85,30 +85,25 @@
     <orderEntry type="module-library">
       <library name="Gradle: kaptGeneratedClasses">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/buildFeaturesDebugUnitTest" />
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardStagingRelease" />
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardUatRelease" />
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardQeRelease" />
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardProductionDebugUnitTest" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardProductionReleaseUnitTest" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardProductionDebugAndroidTest" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardProductionRelease" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/buildFeaturesDebug" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardStagingDebug" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardUatReleaseUnitTest" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardStagingDebugUnitTest" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardStagingDebugAndroidTest" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardUatDebugUnitTest" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardUatDebugAndroidTest" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/buildFeaturesRelease" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardStagingRelease" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardUatRelease" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/buildFeaturesDebugAndroidTest" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardQeRelease" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardProductionDebugUnitTest" />
-          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/buildFeaturesReleaseUnitTest" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardQeDebugUnitTest" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardQeDebugAndroidTest" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardQeDebug" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardUatDebug" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardProductionDebug" />
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardUatReleaseUnitTest" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardQeReleaseUnitTest" />
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardStagingDebugUnitTest" />
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardStagingDebugAndroidTest" />
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardUatDebugUnitTest" />
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardUatDebugAndroidTest" />
           <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/BrowardStagingReleaseUnitTest" />
         </CLASSES>
         <JAVADOC />

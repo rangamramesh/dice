@@ -47,6 +47,10 @@ android {
         versionCode app_code
         buildConfigField "boolean", "TRIGGER", "false"
         dimension "tier"
+        buildFeatures {
+            dataBinding true
+            viewBinding true
+        }
     }
 
 
@@ -64,11 +68,6 @@ android {
         BrowardQe {
             applicationId "com.genfare.mobile2.broward.qe"
         }
-        buildFeatures {
-            dataBinding true
-            viewBinding true
-        }
-
     }
     signingConfigs {
         release {
