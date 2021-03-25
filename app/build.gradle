@@ -29,6 +29,27 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        staging {
+            dimension "default"
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
+        }
+        qa {
+            dimension "default"
+            applicationIdSuffix ".qa"
+            versionNameSuffix "-qa"
+        }
+        uat {
+            dimension "default"
+            applicationIdSuffix ".uat"
+            versionNameSuffix "-uat"
+        }
+        prod {
+            dimension "default"
+        }
+    }
 }
 
 dependencies {
@@ -50,7 +71,7 @@ dependencies {
     implementation dep.coroutines
     implementation dep.recyclerview
     implementation dep.constraintLayout
-
-
+    implementation dep.appcenter
+    implementation dep.appcenterCrashlytics
 
 }
