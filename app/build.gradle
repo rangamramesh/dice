@@ -49,10 +49,11 @@ android {
         prod {
             dimension "default"
         }
-        buildFeatures {
-            dataBinding true
-            viewBinding true
-        }
+
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
     }
 }
 
