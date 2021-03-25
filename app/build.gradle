@@ -1,61 +1,116 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply from: '../config/ext.gradle'
-apply plugin: 'kotlin-android-extensions'
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+
+}
+
+def app_version = "$app_version"
+def app_code = new Date().format('yyyyMMdd').toInteger()
+
+repositories {
+    mavenCentral()
+    google()
+}
 
 android {
-    dataBinding { enabled = true }
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
-    flavorDimensions "default"
-    defaultConfig {
-        applicationId "com.example.dice"
-        minSdkVersion 26
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    lintOptions {
+        abortOnError false
     }
+
+    compileSdkVersion 29
+    buildToolsVersion '28.0.3'
+    useLibrary 'org.apache.http.legacy'
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        versionName app_version
+        versionCode app_code
+        buildConfigField "boolean", "TRIGGER", "false"
+        dimension "tier"
+    }
+
+
+    flavorDimensions "tier"
+    productFlavors {
+        BrowardProduction {
+            applicationId "com.genfare.mobile2.broward"
+        }
+        BrowardStaging {
+            applicationId "com.genfare.mobile2.broward.staging"
+        }
+        BrowardUat {
+            applicationId "com.genfare.mobile2.broward.uat"
+        }
+        BrowardQe {
+            applicationId "com.genfare.mobile2.broward.qe"
+        }
+        buildFeatures {
+            dataBinding true
+            viewBinding true
+        }
+
+    }
+    signingConfigs {
+        release {
+            keyAlias 'demo'
+            keyPassword 'demo'
+            storePassword 'demo'
+            storeFile file('../demo.jks')
+        }
+        browardRelease {
+            keyAlias 'demo'
+            keyPassword 'demo'
+            storePassword 'demo'
+            storeFile file('../demo.jks')
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def flavor = variant.productFlavors[0].name
+            def version = variant.versionName
+            def code = variant.versionCode
+            def newApkName = flavor + "-" + version + "." + code + ".apk"
+            outputFileName = new File(newApkName)
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
-    }
-
-    productFlavors {
-        staging {
-            dimension "default"
-            applicationIdSuffix ".staging"
-            versionNameSuffix "-staging"
+        debug {
+            applicationIdSuffix ".debug"
         }
-        qa {
-            dimension "default"
-            applicationIdSuffix ".qa"
-            versionNameSuffix "-qa"
-        }
-        uat {
-            dimension "default"
-            applicationIdSuffix ".uat"
-            versionNameSuffix "-uat"
-        }
-        prod {
-            dimension "default"
-        }
-
-    }
-    buildFeatures {
-        dataBinding true
-        viewBinding true
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
