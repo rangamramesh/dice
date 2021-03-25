@@ -72,14 +72,14 @@ android {
     signingConfigs {
         release {
             keyAlias 'demo'
-            keyPassword 'demo'
-            storePassword 'demo'
+            keyPassword 'Rangam@5'
+            storePassword 'Rangam@5'
             storeFile file('../demo.jks')
         }
         browardRelease {
             keyAlias 'demo'
-            keyPassword 'demo'
-            storePassword 'demo'
+            keyPassword 'Rangam@5'
+            storePassword 'Rangam@5'
             storeFile file('../demo.jks')
         }
     }
