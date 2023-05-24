@@ -26,4 +26,41 @@ class MainActivity : AppCompatActivity() {
         dataBind.lifecycleOwner = this
 
     }
+
+    fun getString(A: Array<String>, B: Array<String>, P: String): String {
+        val index = ArrayList<Int>()
+        var result: String = "No CONTACT"
+        for (i in B.indices) {
+            if (B[i].contains(P))
+                index.add(i)
+        }
+        if (index.size != 0) {
+            result = A[index[0]]
+            for (i in 1 until index.size) {
+                if (result.length > A[index[i]].length) {
+                    result = A[index[i]]
+                }
+            }
+        }
+        return result
+    }
+
+    fun getString1(S: String): String {
+        val data: String = S.trim().replace(" ", "").replace("-", "")
+        if (data.length >= 2) {
+            if (data.length == 3) {
+                return data
+            } else {
+                var result = data.chunked(3).joinToString("-")
+                if (result.substring(result.length - 3, result.lastIndex).contains("-")) {
+                    result = result.removeRange(result.length - 3, result.lastIndex)
+                    return result + "-" + S.substring(S.length - 2, S.lastIndex)
+                } else {
+                    return result
+                }
+            }
+        } else {
+           return data
+        }
+    }
 }
